@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Agent Login</title>
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+        <style>
+            .wave-bg {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f3f4f6' fill-opacity='1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+                background-repeat: repeat-x;
+                background-position: bottom;
+            }
+
+            .character {
+                animation: float 3s ease-in-out infinite;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+
+            .character:nth-child(2) {
+                animation-delay: 0.5s;
+            }
+            .character:nth-child(3) {
+                animation-delay: 1s;
+            }
+            .character:nth-child(4) {
+                animation-delay: 1.5s;
+            }
+            .character:nth-child(5) {
+                animation-delay: 2s;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-gray-200 wave-bg min-h-screen flex items-center justify-center"
+    >
+        <!-- Animated Characters -->
+        <div class="character absolute left-48 top-24">
+            <svg
+                width="80"
+                height="80"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="#ffffff"
+                    stroke="#000000"
+                    stroke-width="2"
+                />
+                <path
+                    d="M30 40 Q50 20 70 40"
+                    stroke="#000000"
+                    stroke-width="2"
+                    fill="none"
+                />
+                <path
+                    d="M35 60 Q50 70 65 60"
+                    stroke="#000000"
+                    stroke-width="2"
+                    fill="none"
+                />
+                <rect x="25" y="35" width="15" height="5" fill="#FFD700" />
+            </svg>
+        </div>
+        <div class="character absolute right-48 top-48">
+            <svg
+                width="80"
+                height="80"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="#ffffff"
+                    stroke="#000000"
+                    stroke-width="2"
+                />
+                <circle cx="35" cy="40" r="5" fill="#000000" />
+                <circle cx="65" cy="40" r="5" fill="#000000" />
+                <path
+                    d="M30 60 Q50 80 70 60"
+                    stroke="#000000"
+                    stroke-width="2"
+                    fill="none"
+                />
+                <circle cx="70" cy="35" r="15" fill="#5feabb" />
+            </svg>
+        </div>
+        <div class="character absolute left-24 bottom-32">
+            <svg
+                width="80"
+                height="80"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="#ffffff"
+                    stroke="#000000"
+                    stroke-width="2"
+                />
+                <path d="M35 40 L45 40" stroke="#000000" stroke-width="2" />
+                <path d="M55 40 L65 40" stroke="#000000" stroke-width="2" />
+                <path
+                    d="M35 50 Q50 70 65 50"
+                    stroke="#000000"
+                    stroke-width="2"
+                    fill="none"
+                />
+                <circle cx="30" cy="30" r="15" fill="#5feabb" />
+            </svg>
+        </div>
+        <div class="character absolute right-20 bottom-48">
+            <svg
+                width="80"
+                height="80"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="#ffffff"
+                    stroke="#000000"
+                    stroke-width="2"
+                />
+                <circle cx="35" cy="40" r="5" fill="#000000" />
+                <circle cx="65" cy="40" r="5" fill="#000000" />
+                <path
+                    d="M35 60 Q50 50 65 60"
+                    stroke="#000000"
+                    stroke-width="2"
+                    fill="none"
+                />
+                <path d="M25 25 Q40 15 50 25 Q60 15 75 25" fill="#000000" />
+                <circle cx="75" cy="40" r="15" fill="#FFD700" />
+            </svg>
+        </div>
+        <div class="character absolute right-32 top-24">
+            <svg
+                width="80"
+                height="80"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="#ffffff"
+                    stroke="#000000"
+                    stroke-width="2"
+                />
+                <path
+                    d="M30 40 Q40 30 45 40"
+                    stroke="#000000"
+                    stroke-width="2"
+                    fill="none"
+                />
+                <path
+                    d="M55 40 Q60 30 70 40"
+                    stroke="#000000"
+                    stroke-width="2"
+                    fill="none"
+                />
+                <path
+                    d="M40 60 Q50 50 60 60"
+                    stroke="#000000"
+                    stroke-width="2"
+                    fill="none"
+                />
+                <rect x="40" y="30" width="20" height="10" fill="#000000" />
+                <rect
+                    x="45"
+                    y="25"
+                    width="10"
+                    height="5"
+                    fill="#ffffff"
+                    stroke="#000000"
+                    stroke-width="1"
+                />
+            </svg>
+        </div>
+
+        <!-- Login Card -->
+        <div
+            class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md relative z-10"
+        >
+            <h1 class="text-3xl font-bold text-center mb-6">Agent Login</h1>
+            <p class="text-center text-gray-600 mb-8">
+                Enter your details to get sign in to your account
+            </p>
+
+            <form id="loginForm">
+                <div class="mb-6">
+                    <label
+                        for="agencyName"
+                        class="block text-sm font-medium text-gray-700 mb-2"
+                        >Agency Name*</label
+                    >
+                    <input
+                        type="text"
+                        id="agencyName"
+                        value="Dstudio Agency Pvt Ltd"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                </div>
+
+                <div class="mb-6">
+                    <label
+                        for="email"
+                        class="block text-sm font-medium text-gray-700 mb-2"
+                        >Business Email*</label
+                    >
+                    <input
+                        type="email"
+                        id="email"
+                        value="hello@dstudio.digital"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                </div>
+
+                <p class="text-sm text-gray-600 mb-6">
+                    This information will be securely saved as per the
+                    <a href="#" class="text-blue-600 font-medium"
+                        >Terms of Service & Privacy Policy</a
+                    >
+                </p>
+
+                <div class="flex space-x-4">
+                    <button
+                        type="button"
+                        id="helpButton"
+                        class="flex-1 bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                    >
+                        Help?
+                    </button>
+
+                    <button
+                        type="button"
+                        id="nextButton"
+                        class="flex-1 bg-yellow-400 text-gray-800 py-2 px-4 rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                    >
+                        Next Step
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Paper Plane Animation -->
+        <div id="paperPlane" class="absolute right-1/4 top-24">
+            <svg
+                width="60"
+                height="60"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M21.7 2.3L2.3 9.8C1.9 10 1.9 10.5 2.3 10.7L10 15V22C10 22.6 10.8 22.8 11.2 22.4L14 19.5"
+                    stroke="#000000"
+                    stroke-width="1"
+                />
+                <path
+                    d="M10 15L21.7 2.3C22.1 1.9 21.9 1.1 21.3 1.1L2.3 9.8"
+                    fill="#5feabb"
+                />
+            </svg>
+        </div>
+
+        <!-- Footer -->
+        <div
+            class="absolute bottom-0 w-full py-4 text-center text-gray-600 text-sm"
+        >
+            Copyright @lancerwork |
+            <a href="#" class="hover:text-gray-800">Privacy Policy</a>
+        </div>
+
+        <script>
+            function animatePaperPlane() {
+                const plane = document.getElementById("paperPlane");
+                let startX = Math.random() * window.innerWidth;
+                let startY = Math.random() * (window.innerHeight / 2);
+                let endX = Math.random() * window.innerWidth;
+                let endY = Math.random() * (window.innerHeight / 2);
+
+                plane.style.transition = "none";
+                plane.style.transform = `translate(${startX}px, ${startY}px) rotate(${
+                    Math.random() * 360
+                }deg)`;
+
+                setTimeout(() => {
+                    plane.style.transition = "transform 4s ease-in-out";
+                    plane.style.transform = `translate(${endX}px, ${endY}px) rotate(${
+                        Math.random() * 360
+                    }deg)`;
+                }, 100);
+            }
+
+            animatePaperPlane();
+
+            setInterval(animatePaperPlane, 4000);
+        </script>
+    </body>
+</html>
