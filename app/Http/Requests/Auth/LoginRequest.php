@@ -55,7 +55,7 @@ class LoginRequest extends FormRequest
         $user = Auth::user();
         if ($user->role == 'user') {
             return "user";
-        } else if ($user->role == 'user') {
+        } else if ($user->role == 'agent') {
             return "agent";
         } else {
             return "admin";

@@ -29,8 +29,10 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
         $check =  $request->checkRole();
+        // $user = Auth::user();
         if ($check == "admin") {
-            return redirect()->intended(RouteServiceProvider::HomeAdmin);
+            return redirect()->route('admin.dashboard');
+            // return redirect()->route('/dashboardAdmin', ['user' => $user]);
         } elseif ($check == "agent") {
             return redirect()->intended(RouteServiceProvider::HomeAgent);
         } else {
@@ -49,6 +51,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 }
